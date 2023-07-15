@@ -13,7 +13,7 @@
 typedef struct prt
 {
 	char *fl;
-	int (*f)(va_list);
+	int (*f)(va_list)
 } prt_t;
 
 int _printf(const char *format, ...);
