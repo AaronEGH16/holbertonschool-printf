@@ -10,37 +10,42 @@
 
 int _printf(const char *format, ...)
 {
-	unsigned int n = 0, r = 0, i;
 	va_list pr;
-	char flag[2];
-	char jump = '\n';
+	int (*f)(va_list);
+	unsigned int n = 0, r = 0;
+	char perc = '%';
 
 	va_start(pr, format);
 
-	while (format && format[n])
+	while (format && format[n] && format != NULL)
 	{
 		if (format[n] != '%')
 		{
 			write(1, &format[n], 1);
 			n++;
+			r++;
 		}
 		else
 		{
-			i = 0;
-			while (i != 1 && format[n + 1] != '\0')
+			if (format[n + 1] == '%')
 			{
-				flag[i] = format[n + 1];
-				i++, n++;
+				write(1, &perc, 1);
+				r++;
+				n += 2;
 			}
-			flag[1] = '\0';
-			r += (get_flag(flag)(pr)) - 2;
-			n++;
+			else
+			{
+				f = get_flag(&format[n + 1]);
+				if (f == NULL)
+					return (-1);
+				n += 2;
+				r += f(pr);
+			}
 		}
 	}
 
 	va_end(pr);
-	write(1, &jump, 1);
-	return (n + r);
+	return (r);
 }
 
 /**
@@ -52,18 +57,20 @@ int _printf(const char *format, ...)
  * Return: count of bits printed by indicated function
  */
 
-int (*get_flag(char *flag))(va_list)
+int (*get_flag(const char *format))(va_list)
 {
 	int i = 0;
 	prt_t options[] = {
 		{"c", prt_char},
 		{"s", prt_string},
-		{"%", prt_percent},
 		{NULL, NULL}
 	};
 
-	while (i < 4 && *(options[i].fl) != *flag)
-		i++;
+	for (i = 0; options[i].fl != NULL; i++)
+	{
+		if (*(options[i].fl) == *format)
+			break;
+	}
 
 	return (options[i].f);
 }
