@@ -13,6 +13,7 @@ int _printf(const char *format, ...)
 	unsigned int n = 0, r = 0, i;
 	va_list pr;
 	char flag[2];
+	char jump = '\n';
 
 	va_start(pr, format);
 
@@ -20,7 +21,7 @@ int _printf(const char *format, ...)
 	{
 		if (format[n] != '%')
 		{
-			putchar(format[n]); /*debe de cambiarse por write*/
+			write(1, &format[n], 1);
 			n++;
 		}
 		else
@@ -32,14 +33,14 @@ int _printf(const char *format, ...)
 				i++, n++;
 			}
 			flag[1] = '\0';
-			r += get_flag(flag)(pr);
+			r += (get_flag(flag)(pr)) - 2;
 			n++;
 		}
 	}
 
 	va_end(pr);
-	putchar('\n');
-	return (n + (r - 2));
+	write(1, &jump, 1);
+	return (n + r);
 }
 
 /**
