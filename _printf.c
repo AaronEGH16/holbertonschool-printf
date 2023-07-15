@@ -55,9 +55,9 @@ int get_flag(char *flag)(va_list pr)
 {
 	int i = 0;
 	prt_t options[] = {
-		{'c', prt_char},
-		{'s', prt_string},
-		{'%', prt_percent},
+		{"%c", prt_char},
+		{"%s", prt_string},
+		{"%%", prt_percent},
 		{'\0', NULL}
 	};
 
