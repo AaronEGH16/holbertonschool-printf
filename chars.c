@@ -26,29 +26,12 @@ int prt_char(va_list pr)
 
 int prt_string(va_list pr)
 {
-	char *str;
+	char *str = va_arg(pr, char *);
 	int i = 0;
 
-	str = va_arg(pr, char *);
-
-	while (str[i] != '\0')
+	while (str[i] && str != NULL)
 	{
-		write(1, &str[i], 1);
-		i++;
+		write(1, &str[i++], 1);
 	}
 	return (i);
-}
-
-/**
- * prt_percent - prints this symbol (%)
- *
- * Return: count of bits printed
- */
-
-int prt_percent(void)
-{
-	char print = '%';
-
-	write(1, &print, 1);
-	return (1);
 }
