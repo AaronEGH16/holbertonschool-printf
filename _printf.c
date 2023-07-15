@@ -15,15 +15,19 @@ int _printf(const char *format, ...)
 	unsigned int n = 0, r = 0;
 	char perc = '%';
 
+	if (format == NULL)
+		return (-1);
+
 	va_start(pr, format);
 
-	while (format && format[n] && format != NULL)
+	while (format && format[n])
 	{
 		if (format[n] != '%')
 		{
 			write(1, &format[n], 1);
 			n++;
 			r++;
+			continue;
 		}
 		else
 		{
@@ -32,6 +36,7 @@ int _printf(const char *format, ...)
 				write(1, &perc, 1);
 				r++;
 				n += 2;
+				continue;
 			}
 			else
 			{
@@ -40,6 +45,7 @@ int _printf(const char *format, ...)
 					return (-1);
 				n += 2;
 				r += f(pr);
+				continue;
 			}
 		}
 	}
