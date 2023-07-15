@@ -30,11 +30,12 @@ int prt_string(va_list pr)
 	int i = 0;
 
 	if (str == NULL)
-		return (-1);
+		str = "(null)";
 
 	while (str[i] && str != NULL)
 	{
-		write(1, &str[i++], 1);
+		write(1, &str[i], 1);
+		i++;
 	}
 	return (i);
 }
