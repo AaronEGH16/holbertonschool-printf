@@ -10,7 +10,9 @@
 
 int prt_char(va_list pr)
 {
-	putchar(va_arg(pr, int));
+	char chr = va_arg(pr, int);
+
+	write(1, &chr, 1);
 	return (1);
 }
 
@@ -31,7 +33,7 @@ int prt_string(va_list pr)
 
 	while (str[i] != '\0')
 	{
-		putchar(str[i]);
+		write(1, &str[i], 1);
 		i++;
 	}
 	return (i);
@@ -45,6 +47,8 @@ int prt_string(va_list pr)
 
 int prt_percent(void)
 {
-	putchar('%');
+	char print = '%';
+
+	write(1, &print, 1);
 	return (1);
 }
