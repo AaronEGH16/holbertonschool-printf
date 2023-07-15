@@ -11,7 +11,7 @@ typedef struct prt
 } prt_t;
 
 int _printf(const char *format, ...);
-int (*get_flag(char *format))(va_list);
+int (*get_flag(const char *format))(va_list);
 int prt_char(va_list pr);
 int prt_string(va_list pr);
 int prt_percent();
