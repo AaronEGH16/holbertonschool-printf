@@ -10,7 +10,7 @@
 
 int prt_char(va_list pr)
 {
-	putchar(va_arg(pr, char));
+	putchar(va_arg(pr, int));
 	return (1);
 }
 
@@ -24,8 +24,10 @@ int prt_char(va_list pr)
 
 int prt_string(va_list pr)
 {
-	char *str = va_arg(pr, char *);
+	char *str;
 	int i = 0;
+
+	str = va_arg(pr, char *);
 
 	while (str[i] != '\0')
 	{
