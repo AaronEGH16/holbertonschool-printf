@@ -2,9 +2,7 @@
 
 /**
  * _printf - a typical printf function
- *
  * @format: string with contains a format of print
- *
  * Return: count of bits printed
  */
 
@@ -17,9 +15,7 @@ int _printf(const char *format, ...)
 
 	if (format == NULL)
 		return (-1);
-
 	va_start(pr, format);
-
 	while (format && format[n])
 	{
 		if (format[n] != '%')
@@ -49,17 +45,14 @@ int _printf(const char *format, ...)
 			}
 		}
 	}
-
 	va_end(pr);
 	return (r);
 }
 
 /**
  * get_flag - this function get the flag passed by argument
- *			and call the indicated function
- *
- * @flag: flag passed
- *
+ * and call the indicated function
+ * @format: possible valid format specifier
  * Return: count of bits printed by indicated function
  */
 
