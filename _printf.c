@@ -36,16 +36,9 @@ int _printf(const char *format, ...)
 			{
 				f = get_flag(&format[n + 1]);
 				if (f == NULL)
-				{
-					write(1, &format[n], 1);
-					n++;
-					r++;
-				}
-				else
-				{
-					n += 2;
-					r += f(pr);
-				}
+					return (-1);
+				n += 2;
+				r += f(pr);
 			}
 		}
 	}
