@@ -25,21 +25,19 @@ int _printf(const char *format, ...)
 		}
 		else
 		{
+			f = get_flag(&format[n + 1]);
 			if (format[n + 1] == '%')
 			{
 				write(1, &perc, 1);
 				r++, n += 2;
 			}
-			if (format[n + 1] == ' ' || format[n + 1] == '\a' ||
-			format[n + 1] == '\b' || format[n + 1] == '\f' || format[n + 1] == '\n' ||
-			format[n + 1] == '\r' || format[n + 1] == '\t' || format[n + 1] == '\v')
+			else if (f == NULL && format[n + 1] != '\0')
 			{
 				write(1, &perc, 1);
 				r++, n++;
 			}
 			else
 			{
-				f = get_flag(&format[n + 1]);
 				if (f == NULL)
 					return (-1);
 				n += 2, r += f(pr);
