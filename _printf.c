@@ -30,11 +30,6 @@ int _printf(const char *format, ...)
 				write(1, &perc, 1);
 				r++, n += 2;
 			}
-			else if (format[n + 1] != 'c' || format[n + 1] != 's')
-			{
-				write(1, &perc, 1);
-				r++, n++;
-			}
 			else
 			{
 				f = get_flag(&format[n + 1]);
