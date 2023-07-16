@@ -6,8 +6,9 @@ main(void)
 {
 	int x = 0, y = 0;
 
-	x = printf("percent symbol: %%\n");
-	y = _printf("percent symbol: %%\n");
+	printf("testing printf(NULL):\n");
+	x = printf(NULL);
+	y = _printf(NULL);
 	printf("clasic: %d , new: %d\n", x, y);
 
 	return (0);

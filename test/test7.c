@@ -6,8 +6,8 @@ main(void)
 {
 	int x = 0, y = 0;
 
-	x = printf("percent symbol: %%\n");
-	y = _printf("percent symbol: %%\n");
+	x = printf("test a incomplete arg %c !\n");
+	y = _printf("test a incomplete arg %c !\n");
 	printf("clasic: %d , new: %d\n", x, y);
 
 	return (0);
