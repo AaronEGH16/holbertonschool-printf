@@ -21,31 +21,26 @@ int _printf(const char *format, ...)
 		if (format[n] != '%')
 		{
 			write(1, &format[n], 1);
-			n++;
-			r++;
+			n++, r++;
 		}
 		else
 		{
 			if (format[n + 1] == '%')
 			{
 				write(1, &perc, 1);
-				r++;
-				n += 2;
+				r++, n += 2;
+			}
+			else if (format[n + 1] != 'c' || format[n + 1] != 's')
+			{
+				write(1, &perc, 1);
+				r++, n++;
 			}
 			else
 			{
 				f = get_flag(&format[n + 1]);
 				if (f == NULL)
-				{
-					write(1, &format[n], 1);
-					n++;
-					r++;
-				}
-				else
-				{
-					n += 2;
-					r += f(pr);
-				}
+					return (-1);
+				n += 2, r += f(pr);
 			}
 		}
 	}
