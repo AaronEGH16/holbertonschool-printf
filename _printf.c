@@ -10,8 +10,8 @@ int _printf(const char *format, ...)
 {
 	va_list pr;
 	int (*f)(va_list);
-	char perc = '%';
 	unsigned int n = 0, r = 0;
+	char perc = '%';
 
 	if (format == NULL)
 		return (-1);
@@ -25,17 +25,18 @@ int _printf(const char *format, ...)
 		}
 		else
 		{
-			f = get_flag(&format[n + 1]);
-			if (f == NULL)
-				return (-1);
-			if (f == get_flag("%"))
+			if (format[n + 1] == '%')
 			{
 				write(1, &perc, 1);
-				r += 1;
+				r++, n += 2;
 			}
 			else
-				r += f(pr);
-			n += 2;
+			{
+				f = get_flag(&format[n + 1]);
+				if (f == NULL)
+					return (-1);
+				n += 2, r += f(pr);
+			}
 		}
 	}
 	va_end(pr);
@@ -55,7 +56,6 @@ int (*get_flag(const char *format))(va_list)
 	prt_t options[] = {
 		{"c", prt_char},
 		{"s", prt_string},
-		{"%", NULL},
 		{NULL, NULL}
 	};
 
