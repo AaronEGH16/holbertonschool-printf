@@ -23,7 +23,6 @@ int _printf(const char *format, ...)
 			write(1, &format[n], 1);
 			n++;
 			r++;
-			continue;
 		}
 		else
 		{
@@ -32,16 +31,21 @@ int _printf(const char *format, ...)
 				write(1, &perc, 1);
 				r++;
 				n += 2;
-				continue;
 			}
 			else
 			{
 				f = get_flag(&format[n + 1]);
 				if (f == NULL)
-					return (-1);
-				n += 2;
-				r += f(pr);
-				continue;
+				{
+					write(1, &format[n], 1);
+					n++;
+					r++;
+				}
+				else
+				{
+					n += 2;
+					r += f(pr);
+				}
 			}
 		}
 	}
