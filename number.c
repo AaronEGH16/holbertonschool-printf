@@ -1,6 +1,10 @@
 # include "main.h"
 
-/***/
+/**
+ * abs - the absolute value
+ * @number: input
+ * Return: value
+*/
 int abs(int number)
 {
 	if (number < 0)
@@ -9,8 +13,12 @@ int abs(int number)
 		return (number);
 }
 
-/***/
-int contadordigit(int number)
+/**
+ * digitcounter - counter of digits
+ * @number: input
+ * Return: digit count
+*/
+int digitcounter(int number)
 {
 	int count = 0;
 	int number2 = number;
@@ -26,14 +34,18 @@ int contadordigit(int number)
 	return (count);
 }
 
-/***/
+/**
+ * integer - prints an integer
+ * @number: input
+ * Return: digit count
+*/
 int integer(int number)
 {
 	unsigned int unint;
 	int count;
 	char neg = '-';
 
-	count = contadordigit(number);
+	count = digitcounter(number);
 	if (number < 0)
 	{
 		write(1, &neg, 1);
@@ -44,18 +56,22 @@ int integer(int number)
 
 	if (unint >= 10)
 		integer(unint / 10);
-	putchar(unint % 10 + '0');
+	putchar(unint % 10 + '0'); /*cambiar a write*/
 
 	return (count);
 }
 
-/***/
+/**
+ * printint - print a number
+ * @pr: va_list with number to print
+ * Return: number of characters
+*/
 int printint(va_list pr)
 {
 	int number = va_arg(pr, int);
-	int numero;
+	int number3;
 
-	numero = integer(number);
+	number3 = integer(number);
 
-	return (numero);
+	return (number3);
 }
