@@ -61,6 +61,7 @@ int (*get_flag(const char *format))(va_list)
 	prt_t options[] = {
 		{"c", prt_char},
 		{"s", prt_string},
+		{"d", prt_decimal},
 		{NULL, NULL}
 	};
 
