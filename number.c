@@ -44,6 +44,7 @@ int integer(int number)
 	unsigned int unint;
 	int count;
 	char neg = '-';
+	char num;
 
 	count = digitcounter(number);
 	if (number < 0)
@@ -56,7 +57,10 @@ int integer(int number)
 
 	if (unint >= 10)
 		integer(unint / 10);
-	putchar(unint % 10 + '0'); /*cambiar a write*/
+
+	num = (unint % 10 + '0');
+
+	write(1, &num, 1);
 
 	return (count);
 }
