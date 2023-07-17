@@ -1,35 +1,36 @@
 # Proyect: Printf
 ## Table of contents
 1. [General Info](#general-info)
-2. [Mandatory tasks](#mandatory-tasks)
-3. [Demonstration](#demonstration)
-4. [Where users can find help on their project](#where-users-can-find-help-on-their-project)
+2. [Demonstration](#demostration)
+3. [Where users can find help on their project](#where-users-can-find-help-on-their-project)
+4. [[Mandatory tasks](#mandatory-task)
 5. [Authors](#authors)
 ## General Info
 ***
 #### Prints a screen message using a "format string" that includes instructions for blending multiple strings into the final string to be displayed on the screen. Similar to printf.
 ![Programming](https://th.bing.com/th/id/R.d7e2c996ba4a5960da1b5fc90a31f3be?rik=C7qznfiyAwSj3A&pid=ImgRaw&r=0)
-#
+
 ## Demonstration
 ***
 ```
-$ _printf("Hello!");
+ _printf("Hello!");
 ```
 
-* Output: Hello!
+* $ Hello!
 
 ```
-$ _printf("result: &d, 1+1);
-
+ _printf("result: &d, 1+1);
 ```
 
-* Output: result: 2
-#
+* $ result: 2
+
 ## Where users can find help on their project
 ***
+```
 $ man ./man_3_printf
-#
-## Mandatory tasks
+```
+
+## Complete tasks
 
 ### 0. I'm not going anywhere. You can print that wherever you want to. I'm here and I'm a Spur for life
 #### Write a function that produces output according to a format.
@@ -62,7 +63,7 @@ Handle the following conversion specifiers:
 #### Create a man page for your function.
 ##### REPO: GitHub repository: printf
 ##### File: man_3_printf
-#
+
 ## Authors
 ***
 Authors of the project
