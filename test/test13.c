@@ -6,8 +6,8 @@ main(void)
 {
 	int x = 0, y = 0;
 
-	x = printf("print a number: %d\n", 10);
-	y = _printf("print a number: %d\n", 10);
+	x = printf("print a number: %d\n", -10);
+	y = _printf("print a number: %d\n", -10);
 	printf("clasic: %d , new: %d\n", x, y);
 
 	return (0);
