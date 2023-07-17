@@ -22,4 +22,6 @@ int (*get_flag(const char *format))(va_list);
 int prt_char(va_list pr);
 int prt_string(va_list pr);
 int prt_decimal(va_list pr);
+int prt_integer(va_list pr);
+int get_lenght(int num);
 # endif

@@ -39,3 +39,38 @@ int prt_string(va_list pr)
 	}
 	return (i);
 }
+
+/**
+ * prt_decimal - print number with a decimal format
+ *
+ * @pr: addres from argument to print
+ *
+ * Return: count of chars printed
+ */
+
+int prt_decimal(va_list pr)
+{
+	return (0);
+}
+
+/**
+ * get_lenght - aux function to get lenght of unsigned integer
+ *
+ * @num: num to get lenght
+ *
+ * Return: return a lenght of function
+ */
+
+int get_lenght(int num)
+{
+	int n = ((num < 0) ? (-(num)) : (num));
+	int r, con = 0;
+
+	while (n > 0 && r != 0)
+	{
+		r = n % 10;
+		con++;
+		n = n / 10;
+	}
+	return (con);
+}
