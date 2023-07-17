@@ -1,0 +1,76 @@
+.\" Manpage for _printf.
+.\" Contact 6751@students.com or 6769@students.com to correct errors or typos.
+.TH man 3 "17 Jul 2023" "1.0" "_printf man page"
+.SH NAME
+_printf \- customized format convert print
+
+.SH SYNOPSIS
+.B #include "main.h"
+
+.B int _prinf(const char *format, ...);
+
+.SH DESCRIPTION
+print a text using "" with a custom info inside
+
+.SS FLAGS:
+uses this symbol (%) to call any of the next flags:
+
+.BR c
+print any char using ASCII code
+
+.BR s
+print any char* using a array of chars
+
+.BR %
+print % symbol
+
+.BR d
+print a decimal numbers (all numbers in base 10)
+
+.BR i
+print a integer converting all bases to decimal
+
+.SH EXAMPLES
+.SS text
+_printf("Hello!");
+
+$Hello!
+.SS d
+_printf("result: %d", 1+1);
+
+$result: 2
+.SS c
+_printf("print A: %c", 'A');
+
+$A
+.SS s
+_printf("name: %s", Aaron);
+
+$name: Aaron
+.SS %
+_printf("100%% OF POWER!!!");
+
+$100% OF POWER!!!
+
+.SH RETURN VALUE
+this function return a count of chars printed (except the NULL char)
+
+.SS exaple:
+int count;
+
+count = _printf("HELLO");
+
+_printf("%d", count);
+
+$5
+
+.SH SEE ALSO
+man printf
+
+.SH BUGS
+if you not pass the correct amount of args when you use a flag the program prints trash
+
+.SH AUTHORS
+Aaron Gonzalez (6751@students.com)
+&
+Santiago Fleitas (6769@students.com)
