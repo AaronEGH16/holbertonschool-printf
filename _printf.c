@@ -63,6 +63,7 @@ int (*get_flag(const char *format))(va_list)
 		{"s", prt_string},
 		{"d", printint},
 		{"i", printint},
+		{"b", prt_binary},
 		{NULL, NULL}
 	};
 
