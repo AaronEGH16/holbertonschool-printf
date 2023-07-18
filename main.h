@@ -25,4 +25,5 @@ int printint(va_list pr);
 int integer(int number);
 int abs(int number);
 int digitcounter(int number);
+int prt_binary(va_list pr);
 # endif
