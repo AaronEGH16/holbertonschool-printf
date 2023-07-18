@@ -3,7 +3,7 @@
 1. [General Info](#general-info)
 2. [Demonstration](#demonstration)
 3. [Where users can find help on their project](#where-users-can-find-help-on-their-project)
-4. [Mandatory tasks](#mandatory-tasks)
+4. [Complete tasks](#complete-tasks)
 5. [Authors](#authors)
 ## General Info
 ***
