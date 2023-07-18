@@ -1,9 +1,9 @@
 # Proyect: Printf
 ## Table of contents
 1. [General Info](#general-info)
-2. [Demonstration](#demostration)
+2. [Demonstration](#demonstration)
 3. [Where users can find help on their project](#where-users-can-find-help-on-their-project)
-4. [[Mandatory tasks](#mandatory-task)
+4. [Mandatory tasks](#mandatory-tasks)
 5. [Authors](#authors)
 ## General Info
 ***
@@ -19,10 +19,16 @@
 * $ Hello!
 
 ```
- _printf("result: &d, 1+1);
+ _printf("result: &d", 1+1);
 ```
 
 * $ result: 2
+
+```
+ _printf("Hello, my name is %s, it starts with the letter %c and I am %d years old. I always work 100%%.", Santiago, 'S', 19)
+```
+
+* $ Hello, my name is Santaigo, it starts with the letter S and I am 19 years old. I always work 100%.
 
 ## Where users can find help on their project
 ***
