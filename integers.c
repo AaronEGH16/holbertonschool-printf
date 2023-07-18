@@ -79,3 +79,34 @@ int printint(va_list pr)
 
 	return (number3);
 }
+
+/**
+ * prt_binary - get a unsigned int arg and print it in binary form
+ *
+ * @pr: addres from arg
+ *
+ * Return: number of bytes printed
+ */
+
+int prt_binary(va_list pr)
+{
+	unsigned int num = va_arg(pr, unsigned int);
+	int j = 0, i = 0, binaryNum[32];
+
+	if (num == 0)
+	{
+		write(1, &num, 1);
+		return (1);
+	}
+
+	while (num > 0)
+	{
+		binaryNum[i++] = num % 2;
+		num /= 2;
+	}
+
+	for (j = (i - 1); j >= 0; j--)
+		integer(binaryNum[j]);
+
+	return (j);
+}
