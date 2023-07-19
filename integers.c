@@ -113,5 +113,7 @@ int prt_binary(va_list pr)
 	for (j = (i - 1); j >= 0; j--)
 		integer(binaryNum[j]);
 
+	free(binaryNum);
+
 	return (i - 1);
 }
