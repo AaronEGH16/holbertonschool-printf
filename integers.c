@@ -100,8 +100,6 @@ int prt_binary(va_list pr)
 		return (1);
 	}
 
-	num = abs(num);
-
 	while (num > 0)
 	{
 		binaryNum[i++] = num % 2;
