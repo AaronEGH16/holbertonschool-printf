@@ -93,13 +93,13 @@ int prt_binary(va_list pr)
 	int num = va_arg(pr, int);
 	int j = 0, i = 0, binaryNum[32];
 
-	if (num == 0)
+	if (num <= 0)
 	{
+		num = '0';
 		write(1, &num, 1);
 		return (1);
 	}
-	if (num == INT_MIN)
-		num += 1;
+
 	num = abs(num);
 
 	while (num > 0)
