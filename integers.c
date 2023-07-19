@@ -91,7 +91,11 @@ int printint(va_list pr)
 int prt_binary(va_list pr)
 {
 	int num = va_arg(pr, int);
-	int j = 0, i = 0, binaryNum[32];
+	int j = 0, i = 0, binaryNum;
+
+	binaryNum = malloc(sizeof(int) * 32);
+	if (!binaryNum)
+		return (NULL);
 
 	if (num <= 0)
 	{
