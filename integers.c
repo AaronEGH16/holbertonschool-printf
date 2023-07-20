@@ -101,6 +101,7 @@ int prt_binary(va_list pr)
 	{
 		num = '0';
 		write(1, &num, 1);
+
 		return (1);
 	}
 
