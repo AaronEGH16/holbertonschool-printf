@@ -27,4 +27,8 @@ int integer(int number);
 int abs(int number);
 int digitcounter(int number);
 int prt_binary(va_list pr);
+int prt_unsigned(va_list pr);
+int prt_octal(va_list pr);
+int prt_hex(va_list pr);
+int prt_HEX(va_list pr);
 # endif
