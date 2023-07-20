@@ -90,8 +90,12 @@ int printint(va_list pr)
 
 int prt_binary(va_list pr)
 {
-	unsigned int num = va_arg(pr, unsigned int);
-	int j = 0, i = 0, binaryNum[32];
+	unsigned int num;
+	int j, i, binaryNum[32];
+
+	num = va_arg(pr, unsigned int);
+	j = 0;
+	i = 0;
 
 	if (num == 0)
 	{
