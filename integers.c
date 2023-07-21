@@ -91,7 +91,7 @@ int printint(va_list pr)
 int prt_unsigned(va_list pr)
 {
 	unsigned int unint, con;
-	int count;
+	int count = 0;
 	char num;
 
 	unint = va_arg(pr, unsigned int);
@@ -104,9 +104,9 @@ int prt_unsigned(va_list pr)
 	}
 	con = unint;
 
-	while (con > 0)
+	while (con != 0)
 	{
-		con = con / 10;
+		con /= 10;
 		count++;
 	}
 
