@@ -75,7 +75,7 @@ int prt_octal(va_list pr)
 }
 
 /**
- * prt_hex - convert unsigned int to hex
+ * prt_hex - convert unsigned int to hex (abcdef)
  *
  * @pr: addres from value
  *
@@ -115,6 +115,51 @@ int prt_hex(va_list pr)
 
 	for (j = (i - 1); j >= 0; j--)
 		write(1, &hexNum[j], 1);
+
+	return (i);
+}
+
+/**
+ * prt_HEX - convert unsigned int to HEX (ABCDEF)
+ *
+ * @pr: addres from value
+ *
+ * Return: count of chars
+ */
+
+int prt_HEX(va_list pr)
+{
+	unsigned int num;
+	int j, i, temp;
+	char HexNum[100];
+
+	num = va_arg(pr, unsigned int);
+	j = 0;
+	i = 0;
+
+	if (num == 0)
+	{
+		num = '0';
+		write(1, &num, 1);
+
+		return (1);
+	}
+
+	while (num > 0)
+	{
+		temp = num % 16;
+
+		if (temp < 10)
+			temp = temp + 48;
+		else
+			temp = temp + 55;
+
+		HexNum[i++] = temp;
+		num /= 16;
+	}
+
+	for (j = (i - 1); j >= 0; j--)
+		write(1, &HexNum[j], 1);
 
 	return (i);
 }
