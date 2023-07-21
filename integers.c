@@ -96,6 +96,12 @@ int prt_unsigned(va_list pr)
 
 	unint = va_arg(pr, unsigned int);
 
+	if (unint == 0)
+	{
+		num = '0';
+		write(1, &num, 1);
+		return (1);
+	}
 	con = unint;
 
 	while (con > 0)
@@ -111,5 +117,5 @@ int prt_unsigned(va_list pr)
 
 	write(1, &num, 1);
 
-	return (count - 1);
+	return (count);
 }
