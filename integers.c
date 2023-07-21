@@ -98,7 +98,7 @@ int prt_unsigned(va_list pr)
 
 	con = unint;
 
-	while (con != 0)
+	while (con > 0)
 	{
 		con = con / 10;
 		count++;
