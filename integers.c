@@ -90,14 +90,19 @@ int printint(va_list pr)
 
 int prt_unsigned(va_list pr)
 {
-	unsigned int unint;
+	unsigned int unint, con;
 	int count;
-	char neg = '-';
 	char num;
 
-	count = digitcounter(number);
-
 	unint = va_arg(pr, unsigned int);
+
+	con = unint;
+
+	while (con != 0)
+	{
+		con = con / 10;
+		count++;
+	}
 
 	if (unint >= 10)
 		integer(unint / 10);
