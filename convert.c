@@ -1,19 +1,40 @@
 #include "main.h"
 
 /**
- * prt_unsigned - convert int to unsigned int
+ * prt_binary - get a unsigned int arg and print it in binary form
  *
- * @pr: addres from value
+ * @pr: addres from arg
  *
- * Return: count of chars
+ * Return: number of bytes printed
  */
 
-int prt_unsigned(va_list pr)
+int prt_binary(va_list pr)
 {
-	int n = va_arg(pr, int);
-	unsigned int d = ((unsigned int)n);
+	unsigned int num;
+	int j, i, binaryNum[32];
 
-	return (integer(d));
+	num = va_arg(pr, unsigned int);
+	j = 0;
+	i = 0;
+
+	if (num == 0)
+	{
+		num = '0';
+		write(1, &num, 1);
+
+		return (1);
+	}
+
+	while (num > 0)
+	{
+		binaryNum[i++] = num % 2;
+		num /= 2;
+	}
+
+	for (j = (i - 1); j >= 0; j--)
+		integer(binaryNum[j]);
+
+	return (i);
 }
 
 /**
@@ -43,30 +64,4 @@ int prt_octal(va_list pr)
 		integer(binaryNum[j]);
 
 	return (i);
-}
-
-/**
- * prt_hex - convert int to hex (abcdef)
- *
- * @pr: addres from value
- *
- * Return: count of chars
- */
-
-int prt_hex(va_list pr)
-{
-	return (0);
-}
-
-/**
- * prt_HEX - convert int to HEX (ABCDEF)
- *
- * @pr: addres from value
- *
- * Return: count of chars
- */
-
-int prt_HEX(va_list pr)
-{
-	return (0);
 }
