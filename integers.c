@@ -111,5 +111,5 @@ int prt_unsigned(va_list pr)
 
 	write(1, &num, 1);
 
-	return (count);
+	return (count - 1);
 }
