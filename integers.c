@@ -81,38 +81,30 @@ int printint(va_list pr)
 }
 
 /**
- * prt_binary - get a unsigned int arg and print it in binary form
+ * prt_unsigned - convert int to unsigned int
  *
- * @pr: addres from arg
+ * @pr: addres from value
  *
- * Return: number of bytes printed
+ * Return: count of chars
  */
 
-int prt_binary(va_list pr)
+int prt_unsigned(va_list pr)
 {
-	unsigned int num;
-	int j, i, binaryNum[32];
+	unsigned int unint;
+	int count;
+	char neg = '-';
+	char num;
 
-	num = va_arg(pr, unsigned int);
-	j = 0;
-	i = 0;
+	count = digitcounter(number);
 
-	if (num == 0)
-	{
-		num = '0';
-		write(1, &num, 1);
+	unint = va_arg(pr, unsigned int);
 
-		return (1);
-	}
+	if (unint >= 10)
+		integer(unint / 10);
 
-	while (num > 0)
-	{
-		binaryNum[i++] = num % 2;
-		num /= 2;
-	}
+	num = (unint % 10 + '0');
 
-	for (j = (i - 1); j >= 0; j--)
-		integer(binaryNum[j]);
+	write(1, &num, 1);
 
-	return (i);
+	return (count);
 }
