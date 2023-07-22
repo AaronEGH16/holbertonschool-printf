@@ -64,7 +64,7 @@ int prt_revstr(va_list pr)
 	while (str[i] != '\0')
 		i++;
 	r = i;
-	for (; i > -1; i--)
+	for (i -= 1; i >= 0; i--)
 		write(1, &str[i], 1);
 
 	return (r);
