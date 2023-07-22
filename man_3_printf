@@ -30,6 +30,27 @@ print a decimal numbers (all numbers in base 10)
 .BR i
 print a integer converting all bases to decimal
 
+.BR b
+print a unsigned int converted to binary
+
+.BR u
+print a unsigned int
+
+.BR o
+print unsigned int converted to octal
+
+.BR x
+print unsigned int converted to hex (lower case)
+
+.BR X
+print unsigned int converted to HEX (upper case)
+
+.BR p
+print a pointer addres
+
+.BR r
+print a reverse string
+
 .SH EXAMPLES
 .SS text
 _printf("Hello!");
@@ -51,6 +72,44 @@ $name: Aaron
 _printf("100%% OF POWER!!!");
 
 $100% OF POWER!!!
+.SS b
+_printf("%b", 100);
+
+$1100100
+
+.SS u
+unsigned int ui = (unsigned int)INT_MAX + 1024;
+
+_printf("%u", ui);
+
+$2147484671
+
+.SS o
+_printf("%o", 100);
+
+$144
+
+.SS x
+_printf("%x", 100000000);
+
+$5f5e100
+
+.SS X
+_printf("%X", 100000000);
+
+$5F5E100
+
+.SS r
+_printf("%r", "Hello!");
+
+$!olleH
+
+.SS p
+void *p = (void *)0x7ffe637541f0;
+
+_printf("%p", p);
+
+$0x7ffe637541f0
 
 .SH RETURN VALUE
 this function return a count of chars printed (except the NULL char)
