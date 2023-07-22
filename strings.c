@@ -39,3 +39,33 @@ int prt_string(va_list pr)
 	}
 	return (i);
 }
+
+/**
+ * prt_revstr - print string in reverse
+ *
+ * @pr: addres from string
+ *
+ * Return: count of chars printed
+ */
+
+int prt_revstr(va_list pr)
+{
+	char *str = va_arg(pr, char *);
+	char *null = "(null)";
+	int i = 0, r = 0;
+
+	if (str == NULL)
+	{
+		for (; null[i] != '\0'; i++)
+			write(1, &null[i], 1);
+		return (i);
+	}
+
+	while (str[i] != '\0')
+		i++;
+	r = i;
+	for (; i > -1; i--)
+		write(1, &str[i], 1);
+
+	return (r);
+}
