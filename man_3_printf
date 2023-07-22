@@ -48,8 +48,14 @@ print unsigned int converted to HEX (upper case)
 .BR p
 print a pointer addres
 
+.BR S
+print all non printable characters in HEX ascii code
+
 .BR r
 print a reverse string
+
+.BR R
+print text in ROT13 form
 
 .SH EXAMPLES
 .SS text
@@ -111,6 +117,15 @@ _printf("%p", p);
 
 $0x7ffe637541f0
 
+.SS S
+_printf("%S\n", "Best\nSchool");
+
+$Best\x0ASchool
+
+.SS R
+_printf("%R\n", "HELLO");
+
+$URYYB
 .SH RETURN VALUE
 this function return a count of chars printed (except the NULL char)
 
@@ -121,13 +136,14 @@ count = _printf("HELLO");
 
 _printf("%d", count);
 
+$HELLO
 $5
 
 .SH SEE ALSO
 man printf
 
 .SH BUGS
-if you not pass the correct amount of args when you use a flag the program prints trash
+if you not pass the correct amount or the correct type of args when you use a flag the program prints trash
 
 .SH AUTHORS
 Aaron Gonzalez (6751@students.com)
