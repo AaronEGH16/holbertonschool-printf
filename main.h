@@ -31,4 +31,5 @@ int prt_unsigned(va_list pr);
 int prt_octal(va_list pr);
 int prt_hex(va_list pr);
 int prt_HEX(va_list pr);
+int prt_addres(va_list pr);
 # endif
