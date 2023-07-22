@@ -69,6 +69,7 @@ int (*get_flag(const char *format))(va_list)
 		{"x", prt_hex},
 		{"X", prt_HEX},
 		{"p", prt_addres},
+		{"r", prt_revstr},
 		{NULL, NULL}
 	};
 
