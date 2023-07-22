@@ -98,3 +98,41 @@ int prt_NPCascii(va_list pr)
 	}
 	return (i + r);
 }
+
+/**
+ * prt_rot13 - print text in rot13
+ *
+ * @pr: addres of the string to print
+ *
+ * Return: count of chars printed
+ */
+
+int prt_rot13(va_list pr)
+{
+	char *str = va_arg(pr, char *);
+	int i = 0;
+	char rot;
+
+	if (str == NULL)
+	{
+		str = "(null)";
+		while (str[i++] && str != NULL)
+			write(1, &str[i], 1);
+	}
+	else
+	{
+		while (str[i] && str != NULL)
+		{
+			rot = str[i];
+			if ((rot >= 'A' && rot < 'N') ||
+					(rot >= 'a' && rot < 'n'))
+				rot += 13;
+			else if ((rot >= 'N' && rot <= 'Z') ||
+					(rot >= 'n' && rot <= 'z'))
+				rot -= 13;
+			write(1, &rot, 1);
+			i++;
+		}
+	}
+	return (i);
+}
