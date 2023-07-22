@@ -33,6 +33,6 @@ int prt_hex(va_list pr);
 int prt_HEX(va_list pr);
 int prt_addres(va_list pr);
 int prt_NPCascii(va_list pr);
-
+int prt_rot13(va_list pr);
 int prt_revstr(va_list pr);
 # endif
