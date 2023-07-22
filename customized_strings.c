@@ -11,16 +11,16 @@
 int prt_addres(va_list pr)
 {
 	void *addr = va_arg(pr, void *);
-	char *null = "(null)";
+	char *null = "(nil)";
 	char hexNum[100];
-	long int aux;
+	unsigned long int aux;
 	int i = 0, j = 0, temp;
 
 	if (addr == NULL)
 	{
-		for (; i < 6; i++)
+		for (; null[i] != '\0'; i++)
 			write(1, &null[i], 1);
-		return (6);
+		return (i - 1);
 	}
 
 	aux = (unsigned long int)addr;
