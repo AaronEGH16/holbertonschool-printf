@@ -70,6 +70,7 @@ int (*get_flag(const char *format))(va_list)
 		{"X", prt_HEX},
 		{"p", prt_addres},
 		{"S", prt_NPCascii},
+		{"R", prt_rot13},
 		{"r", prt_revstr},
 		{NULL, NULL}
 	};
