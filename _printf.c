@@ -68,6 +68,7 @@ int (*get_flag(const char *format))(va_list)
 		{"o", prt_octal},
 		{"x", prt_hex},
 		{"X", prt_HEX},
+		{"p", prt_addres},
 		{NULL, NULL}
 	};
 
