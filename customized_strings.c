@@ -20,7 +20,7 @@ int prt_addres(va_list pr)
 	{
 		for (; null[i] != '\0'; i++)
 			write(1, &null[i], 1);
-		return (i - 1);
+		return (i);
 	}
 
 	aux = (unsigned long int)addr;
