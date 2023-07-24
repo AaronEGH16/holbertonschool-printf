@@ -21,38 +21,46 @@ _printf("El valor es %d.\n", contador);
 ***
 ### As mentioned before, our new printf has the same functions as the original. I will now show different specific formats, what they do and a brief demonstration.
 
+#### The marks in the format string must have the following structure (fields in square brackets are optional):
+
+```
+%[parameter][flags][width][.precision][length]type
+```
+
+#### Therefore, each flag starts with the symbol "%" and ends with its type. Each of the names (parameter, flags, width, precision, length and type) represents a set of possible values. At the moment our new function only presents the TYPE values and I will show them below.
+
 #### %c - Prints the corresponding ASCII character.
 
 ```
-_printf("My name begins with the letter %d", 'S');
+_printf("My name begins with the letter %c\n", 'S');
 ```
 * $ My name begins with the letter S
 
 #### %s - Character string (ending in '0')
 
 ```
-_printf("My name is %s", Santiago);
+_printf("My name is %s\n", Santiago);
 ```
 * $ My name is Santiago
 
 #### %% - Prints the % symbol.
 
 ```
-_printf("I am 100%%");
+_printf("I am 100%%\n");
 ```
 * $ I am 100%
 
 #### %d and %i - Signed decimal conversion of an integer.
 
 ```
-_printf("I have %d cats and %d dogs", 2, 3);
+_printf("I have %d cats and %d dogs\n", 2, 3);
 ```
 * $ I have 2 cats and 3 dogs
 
 #### %b - The unsigned int argument is converted to binary.
 
 ```
-_printf("The binary of 100 is %b", 100);
+_printf("The binary of 100 is %b\n", 100);
 ```
 * $ The binary of 100 is 1100100
 
@@ -61,15 +69,53 @@ _printf("The binary of 100 is %b", 100);
 ```
 unsigned int ui = (unsigned int)INT_MAX + 1024;
 
-_printf("%u", ui);
+_printf("%u\n", ui);
 ```
 * $ 2147484671
 
 #### %o - Unsigned octal conversion of an integer.
 
 ```
-_printf("");
+_printf("100 in octal is: %o\n", 100);
+```
+* $ 100 in octal is: 144
 
+#### %x and %X - Unsigned hexadecimal conversion. With the difference that one has lowercase letters and the other uppercase.
+
+```
+_printf("%x\n", 100000000);
+```
+* $ 5f5e100
+
+#### %r - Prints the reversed string.
+
+```
+_printf("%r\n", "Hello");
+```
+* $ olleH
+
+#### %p - Memory address (pointer)
+
+```
+void *p = (void *)0x7ffe637541f0;
+
+_printf("%p\n", p);
+```
+* $ 0x7ffe637541f0
+
+#### %S - Print all non printable characters in HEX ascii code.
+
+```
+_printf("%S\n", "Best\nSchool");
+```
+* $ Best\x0ASchool
+
+#### $R - Prints the rot13'ed string.
+
+```
+_printf("%R\n", "HELLO");
+```
+* $ URYYB
 
 ## Where users can find help on their project
 ***
