@@ -9,7 +9,7 @@
 #### The new function printf is similar to printf, it prints a message to the screen using a "format string" that includes instructions to mix multiple strings into the final string to be displayed on the screen. It is a special function because it receives a variable number of parameters. The first parameter is fixed and is the format string. It includes text to be printed verbatim and marks to be replaced by text obtained from the additional parameters. The following example shows how the value of the counter variable is printed.
 
 ```
-_printf("El valor es %d.\n", contador);
+_printf("The value is %d.\n", counter);
 ```
 #### The symbol "%" denotes the beginning of the formatting mark. The "%d" mark is replaced by the value of the counter variable and the resulting string is printed. The symbol "\n" represents a line break. The output, by default, is justified to the right of the total width we have given to the field, which by default is the length of the string.
 
@@ -53,7 +53,7 @@ _printf("I am 100%%\n");
 #### %d and %i - Signed decimal conversion of an integer.
 
 ```
-_printf("I have %d cats and %d dogs\n", 2, 3);
+_printf("I have %d cats and %i dogs\n", 2, 3);
 ```
 * $ I have 2 cats and 3 dogs
 
