@@ -24,10 +24,10 @@ _printf("El valor es %d.\n", contador);
 #### The marks in the format string must have the following structure (fields in square brackets are optional):
 
 ```
-%[parameter][flags][width][.precision][length]type
+%type
 ```
 
-#### Therefore, each flag starts with the symbol "%" and ends with its type. Each of the names (parameter, flags, width, precision, length and type) represents a set of possible values. At the moment our new function only presents the TYPE values and I will show them below.
+#### Therefore, each flag starts with the symbol "%" and ends with its type. Each of the names represents a set of possible values. At the moment our new function only presents the TYPE values and I will show them below.
 
 #### %c - Prints the corresponding ASCII character.
 
@@ -36,7 +36,7 @@ _printf("My name begins with the letter %c\n", 'S');
 ```
 * $ My name begins with the letter S
 
-#### %s - Character string (ending in '0')
+#### %s - Character string (ending in '\0')
 
 ```
 _printf("My name is %s\n", Santiago);
