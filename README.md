@@ -21,7 +21,7 @@ _printf("El valor es %d.\n", contador);
 ***
 ### As mentioned before, our new printf has the same functions as the original. I will now show different specific formats, what they do and a brief demonstration.
 
-#### The marks in the format string must have the following structure (fields in square brackets are optional):
+#### The marks in the format string must have the following structure:
 
 ```
 %type
