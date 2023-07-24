@@ -16,7 +16,7 @@ _printf("El valor es %d.\n", contador);
 ![Programming](https://th.bing.com/th/id/R.d7e2c996ba4a5960da1b5fc90a31f3be?rik=C7qznfiyAwSj3A&pid=ImgRaw&r=0)
 
 #### Our flowchart for the new printf function
-![Flowchart](https://scontent.fmvd1-1.fna.fbcdn.net/v/t39.30808-6/362908011_206907378992888_2994688613866357203_n.jpg?_nc_cat=101&cb=99be929b-59f725be&ccb=1-7&_nc_sid=730e14&_nc_ohc=wpkrYJ89sP0AX-_V1Wj&_nc_ht=scontent.fmvd1-1.fna&oh=00_AfA8QNk7SrFucJ09UUHsDZHrIiAlbUrx3De9nNkgZvxZPA&oe=64C25E93)
+![Flowchart](https://scontent.fmvd1-1.fna.fbcdn.net/v/t39.30808-6/363352742_206988422318117_544877410583787182_n.jpg?_nc_cat=110&cb=99be929b-59f725be&ccb=1-7&_nc_sid=730e14&_nc_ohc=MFRSBk9s-jsAX_vGq68&_nc_ht=scontent.fmvd1-1.fna&oh=00_AfCAoWX1GHb-7EZq-8Wb4voy9RSmttJpA_EdrAnEWE8Y4Q&oe=64C28D99)
 ## Functions and their demonstrations
 ***
 ### As mentioned before, our new printf has the same functions as the original. I will now show different specific formats, what they do and a brief demonstration.
